@@ -1,40 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" class="css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="images-wrapper">
+        <div class="img-box-wrapper">
+          <img
+            src="./images/illustration-box-desktop.svg"
+            class="img-box"
+            alt=""
+          />
+        </div>
+        <div class="img-desktop-wrapper">
+          <img
+            src="./images/illustration-woman-online-desktop.svg"
+            class="img-desktop"
+            alt=""
+          />
+        </div>
+        <div class="img-bg-wrapper">
+          <img
+            src="./images/bg-pattern-desktop.svg"
+            class="img-bg"
+            alt=""
+          />
+        </div>
+      </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ Accordion Card</title>
+      <div class="accordion">
+        <h1>FAQ</h1>
+        <div id="accordion-1" class="accordion-element">
+          <div class="question">
+            How many team members can I invite?
+            <a href="#"
+              ><img
+                src="./images/icon-arrow-down.svg"
+                class="arrow"
+                alt=""
+            /></a>
+          </div>
+          <div class="answer">
+            You can invite up to 2 additional users on the Free plan.
+            There is no limit on team members for the Premium plan.
+          </div>
+        </div>
+        <div id="accordion-2" class="accordion-element">
+          <div class="question">
+            What is the maximum file upload size?
+            <a href="#"
+              ><img
+                src="./images/icon-arrow-down.svg"
+                class="arrow"
+                alt=""
+            /></a>
+          </div>
+          <div class="answer">
+            No more than 2GB. All files in your account must fit your
+            allotted storage space.
+          </div>
+        </div>
+        <div id="accordion-3" class="accordion-element">
+          <div class="question">
+            How do I reset my password?
+            <a href="#"
+              ><img
+                src="./images/icon-arrow-down.svg"
+                class="arrow"
+                alt=""
+            /></a>
+          </div>
+          <div class="answer">
+            Click “Forgot password” from the login page or “Change
+            password” from your profile page. A reset link will be
+            emailed to you.
+          </div>
+        </div>
+        <div id="accordion-4" class="accordion-element">
+          <div class="question">
+            Can I cancel my subscription?
+            <a href="#"
+              ><img
+                src="./images/icon-arrow-down.svg"
+                class="arrow"
+                alt=""
+            /></a>
+          </div>
+          <div class="answer">
+            Yes! Send us a message and we’ll process your request no
+            questions asked.
+          </div>
+        </div>
+        <div id="accordion-5" class="accordion-element">
+          <div class="question">
+            Do you provide additional support?
+            <a href="#"
+              ><img
+                src="./images/icon-arrow-down.svg"
+                class="arrow"
+                alt=""
+            /></a>
+          </div>
+          <div class="answer">
+            Chat and email support is available 24/7. Phone lines are
+            open during normal business hours.
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+    <div class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/YannikS14">Yannik S.</a>.
+    </div>
+  </body>
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <script>
+    const accordionOne = document.querySelectorAll(
+      '.accordion-element',
+    );
+    accordionOne.forEach((el) => {
+      const question = el.querySelector('.question');
+      const answer = el.querySelector('.answer');
+      const arrow = el.querySelector('.arrow');
+      el.addEventListener('click', () => {
+        question.classList.toggle('active');
+        answer.classList.toggle('open');
+        arrow.classList.toggle('active');
+      });
+    });
+  </script>
 </html>
